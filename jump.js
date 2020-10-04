@@ -1,6 +1,6 @@
 const JUMP_KEY = ' ';
 
-AFRAME.registerComponent('jump-refined', {
+AFRAME.registerComponent('jump', {
   schema: {
     height: {
      type: 'number',
@@ -15,7 +15,7 @@ AFRAME.registerComponent('jump-refined', {
   init: function() {
     document.addEventListener('keydown', e => {
       if (e.key != JUMP_KEY) return;
-     
+
       const upInterval = setInterval(() => this.el.object3D.position.y += this.data.height / this.data.interval, 10);
      
       setTimeout(() => {
